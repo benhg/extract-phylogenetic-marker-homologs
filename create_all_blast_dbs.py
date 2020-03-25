@@ -44,6 +44,10 @@ def make_database_input_files():
         for record in SeqIO.parse(fh, "fasta"):
             make_sequence_db_input_fasta(record.seq, record.id)
 
+@bash_app
+def deduplicate_fasta(fasta_path):
+    return awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' test.fasta | awk '!seen[$1]++' | awk -v OFS="\n" '{print $1,$2}' > 
+
 if __name__ == '__main__':
     make_database_input_files()
     databases = os.listdir("databases")

@@ -12,3 +12,5 @@ For step 1,  am I essentially creating a new blast database, which is made up of
 then running BLAST with that marker against that modified database
 
 Then taking those hts and plugging them into STAR (step 2)
+
+NB: `awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' test.fasta | awk '!seen[$1]++' | awk -v OFS="\n" '{print $1,$2}' > deduped.fasta`
