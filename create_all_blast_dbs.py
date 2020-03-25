@@ -2,6 +2,7 @@ import parsl
 from parsl.app.app import bash_app
 from parsl.config import Config
 from parsl.executors.threads import ThreadPoolExecutor
+import os
 
 config = Config(
     executors=[ThreadPoolExecutor()],
@@ -17,7 +18,7 @@ def create_db(sequence_name):
     import os
     if not os.path.isdir(f"databases/{sequence_name}"):
         return "Fail"
-    return "makeblastdb ...."
+    return f"cd databases/{sequence_name}; makeblastdb -in sufficient_length.fasta -out {sequence_name} -parse_seqids -dbtype nucl; cd ../.."
 
 def make_sequence_db_input_fasta(sequence, sequence_name):
     import os
@@ -45,3 +46,6 @@ def make_database_input_files():
 
 if __name__ == '__main__':
     make_database_input_files()
+    databases = os.listdir("databases")
+    for database in databases:
+        create_db(database)
