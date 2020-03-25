@@ -23,6 +23,8 @@ def make_sequence_db_input_fasta(sequence, sequence_name):
                         print(f"Writing {record.id}")
                         fh.write(f">{record.id}\n")
                         fh.write(f"{record.seq}\n")
+                    else:
+                        print(f"Not writing {record.id}")
 
 
 def make_database_input_files():
