@@ -30,7 +30,7 @@ def run_blast_query(input_prefix):
     database_name = glob.glob(f"{database_dir}/*.fasta")[0].split("/")[1]
     input_file = f"../../input_files/{input_prefix}_in.fasta"
     output_file = f"{input_prefix}_out.txt"
-    blast_cmd = f"blastn -db {database_name} -query {input_file} -out {output_file}"
+    blast_cmd = f"blastn -db {database_name} -query {input_file} -out ../../output_files/{output_file}"
     print(blast_cmd)
     #return f"cd {database_dir}; {blast_cmd}; cd ../../;"
 
