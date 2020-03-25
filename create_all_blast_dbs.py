@@ -1,12 +1,15 @@
 import parsl
+from parsl.app.app import bash_app
+from parsl.config import Config
+
 from Bio import SeqIO
 
 #@bash_app
-def create_db(sequence, sequence_name):
+def create_db(sequence_name):
     import os
-    os.makedirs("databases/"+sequence_name)
-    make_sequence_db_input_fasta(sequence, sequence_name)
-    return ""
+    if not os.path.isdir(f"databases/{sequence_name}"):
+        return "Fail"
+    return "makeblastdb ...."
 
 def make_sequence_db_input_fasta(sequence, sequence_name):
     import os
