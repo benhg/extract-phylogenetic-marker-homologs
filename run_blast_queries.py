@@ -33,7 +33,7 @@ def run_blast_query(input_prefix):
     output_file = f"{input_prefix}_out.txt"
     blast_cmd = f"blastn -db {database_name} -query {input_file} -out ../../output_files/{output_file}"
     print(blast_cmd)
-    #return f"cd {database_dir}; {blast_cmd}; cd ../../;"
+    return f"cd {database_dir}; {blast_cmd}; cd ../../;"
 
 
 
