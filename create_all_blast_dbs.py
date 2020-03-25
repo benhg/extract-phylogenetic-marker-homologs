@@ -1,10 +1,18 @@
 import parsl
 from parsl.app.app import bash_app
 from parsl.config import Config
+from parsl.executors.threads import ThreadPoolExecutor
+
+config = Config(
+    executors=[ThreadPoolExecutor()],
+    lazy_errors=True
+)
+
+parsl.load(config)
 
 from Bio import SeqIO
 
-#@bash_app
+@bash_app
 def create_db(sequence_name):
     import os
     if not os.path.isdir(f"databases/{sequence_name}"):
