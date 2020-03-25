@@ -19,8 +19,10 @@ def make_sequence_db_input_fasta(sequence, sequence_name):
         for file in glob("/home/labs/binford/Assembled_Untranslated_Transcriptomes/s*"):
             with open(file) as read_fh:
                 for record in SeqIO.parse(read_fh, "fasta"):
-                    fh.write(f">{record.id}\n")
-                    fh.write(f"{record.seq}\n")
+                    if len(record.seq) >= min_length:
+                        print(f"Writing {record.id}")
+                        fh.write(f">{record.id}\n")
+                        fh.write(f"{record.seq}\n")
 
 
 def make_database_input_files():
