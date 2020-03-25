@@ -22,7 +22,11 @@ def make_sequence_db_input_fasta(sequence, sequence_name):
                     fh.write(f">{record.id}\n")
                     fh.write(f"{record.seq}\n")
 
-if __name__ == '__main__':
+
+def make_database_input_files():
     with open("input_sequences.fasta") as fh:
         for record in SeqIO.parse(fh, "fasta"):
             make_sequence_db_input_fasta(record.seq, record.id)
+
+if __name__ == '__main__':
+    make_database_input_files()
