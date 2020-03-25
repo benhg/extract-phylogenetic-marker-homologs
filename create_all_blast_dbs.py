@@ -1,7 +1,7 @@
 import parsl
 from Bio import SeqIO
 
-@bash_app
+#@bash_app
 def create_db(sequence, sequence_name):
     import os
     os.makedirs(sequence_name)
