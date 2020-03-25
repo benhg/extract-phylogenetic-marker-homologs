@@ -13,4 +13,6 @@ then running BLAST with that marker against that modified database
 
 Then taking those hts and plugging them into STAR (step 2)
 
-NB: `awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' test.fasta | awk '!seen[$1]++' | awk -v OFS="\n" '{print $1,$2}' > deduped.fasta`
+NB: `awk 'BEGIN{RS=">"}NR>1{sub("\n","\t"); gsub("\n",""); print RS$0}' sufficient_length.fasta | awk '!seen[$1]++' | awk -v OFS="\n" '{print $1,$2}' > deduped.fasta` to deduplicate fasta
+
+NB: `makeblastdb -in deduped.fasta -out 16S_Periegops -parse_seqids -dbtype nucl` to make blast db
