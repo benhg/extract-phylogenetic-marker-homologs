@@ -27,7 +27,7 @@ parsl.load(config)
 @bash_app
 def run_blast_query(input_prefix):
     database_dir = databases_translate_table[input_prefix]
-    database_name = glob.glob(f"{database_dir}/*.fasta")[0].split("/")[-1]
+    database_name = glob.glob(f"{database_dir}/*.fasta")[0].split("/")[-1].split(".")[0]
     #print(database_name)
     input_file = f"../../input_files/{input_prefix}_in.fasta"
     output_file = f"{input_prefix}_out.txt"
