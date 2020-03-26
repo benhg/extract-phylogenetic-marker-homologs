@@ -1,5 +1,4 @@
-#import Bio
-
+from Bio import SeqIO
 all_transcripts_fasta = "~/all.fasta"
 
 # The FASTA ids have other stuff in them so we need to repeatedly iterate through.
@@ -12,7 +11,15 @@ def create_single_input_fasta(input_prefix):
 	with open(f"STAR_input_fastas/{input_prefix}_input.fasta", "w") as fh:
 		for sequence_name in sequences_list:
 			fh.write(f">{sequence_name}\n")
-			# find sequences
+			sequence = get_sequence(sequence_name)
+			fh.write(f"{sequence}\n")
+
+def get_sequence(sequence_name):
+	with open(all_transcripts_fasta, "rU") as handle:
+	    for record in SeqIO.parse(handle, "fasta"):
+	        if sequence_name in record.id:
+	        	return record.seq
+	    return "Couldnae Find"
 
 
 if __name__ == '__main__':
