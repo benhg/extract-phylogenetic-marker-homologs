@@ -76,7 +76,6 @@ def star_align(filename, directory, against, inputs=[]):
     os.chdir(directory)
 
     mvalue = str(f"{filename}").split('.fasta')[0]
-    svalue = str(int(str(filename.split("_")[0].split('s')[1])))
 
     genomeDir = f"{directory}{mvalue}/gd"
 
