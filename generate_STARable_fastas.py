@@ -18,8 +18,10 @@ def get_sequence(sequence_name):
 	with open(all_transcripts_fasta, "rU") as handle:
 	    for record in SeqIO.parse(handle, "fasta"):
 	        if sequence_name in record.id:
+	        	print(f"Found {sequence_name}")
 	        	return record.seq
 	    return "Couldnae Find"
+	    print(f"Couldn't find {sequence_name}")
 
 
 if __name__ == '__main__':
