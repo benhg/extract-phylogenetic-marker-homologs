@@ -1,5 +1,5 @@
 from Bio import SeqIO
-all_transcripts_fasta = "~/all.fasta"
+all_transcripts_fasta = "/home/users/glick/all.fasta"
 
 # The FASTA ids have other stuff in them so we need to repeatedly iterate through.
 # This sucks.
