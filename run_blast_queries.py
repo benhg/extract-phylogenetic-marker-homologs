@@ -31,7 +31,7 @@ def run_blast_query(input_prefix):
     #print(database_name)
     input_file = f"../../input_files/{input_prefix}_in.fasta"
     output_file = f"{input_prefix}_out.txt"
-    blast_cmd = f"blastn -db {database_name} -query {input_file} -out ../../output_files/{output_file}"
+    blast_cmd = f"blastn -db {database_name} -query {input_file} -out ../../output_files/{output_file} -outfmt 7"
     print(blast_cmd)
     return f"cd {database_dir}; {blast_cmd}; cd ../../;"
 
