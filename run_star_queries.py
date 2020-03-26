@@ -128,11 +128,11 @@ def parsl_first_align(directory):
     align_futures = []
     for index, file in enumerate(files):
         svalue = int(str(file.split("_")[0].split('s')[1]))
-        against = svalue
-        align_futures.append(
-            star_align(
-                file, directory, against, inputs=[
-                    index_futures[index]]))
+        for i in range(1,23):
+            align_futures.append(
+                star_align(
+                    file, directory, i, inputs=[
+                        index_futures[index]]))
     
     
     
