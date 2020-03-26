@@ -130,8 +130,7 @@ def parsl_first_align(directory):
         for i in range(1,23):
             align_futures.append(
                 star_align(
-                    file, directory, i, inputs=[
-                        index_futures[index]]))
+                    file, directory, i))
     
     
     
