@@ -23,7 +23,7 @@ config = Config(
                                       provider=GridEngineProvider(walltime='10000:00:00',
                                                                   nodes_per_block=1,
                                                                   init_blocks=1,
-                                                                  max_blocks=4,
+                                                                  max_blocks=3,
                                                                   scheduler_options="#$ -pe smp 48"
                                                                   ),
                                       label="workers")
