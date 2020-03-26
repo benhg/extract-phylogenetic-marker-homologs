@@ -39,6 +39,8 @@ def run_blast_query(input_prefix):
 
 if __name__ == '__main__':
     all_to_search = glob.glob("input_files/*_in.fasta")
+    fus = []
     for seq in all_to_search:
         seq_prefix = seq.split("/")[1].split('_')[0]
-        run_blast_query(seq_prefix)
+        fus.append(run_blast_query(seq_prefix))
+    fus[-1].result()
