@@ -2,6 +2,8 @@ import os
 from os import sys
 import sys
 
+zero = 0
+
 def extract_output(prefix):
     directory = f'/home/users/glick/extract-phylogenetic-marker-homologs/{prefix}_star_out/'
     os.chdir(directory)
