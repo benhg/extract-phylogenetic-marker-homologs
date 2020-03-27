@@ -58,10 +58,10 @@ def extract_output(prefix):
                 os.chdir(directory)
 
 
-                print("writing to file ")
-                with open("output.txt", "a") as file:
-                    print(f"{svalue} {zero} {one} {two} {three} {four} {five} {six} {seven} {eight} {nine} {ten}")
-                    file.write(f"{svalue} {zero} {one} {two} {three} {four} {five} {six} {seven} {eight} {nine} {ten} {eleven} {twelve} {thirteen} {fourteen} {fifteen} {sixteen} {seventeen} {eighteen} {nineteen} {twenty} {twentyone} {twentytwo}\n")
+            print("writing to file ")
+            with open("output.txt", "a") as file:
+                print(f"{svalue} {zero} {one} {two} {three} {four} {five} {six} {seven} {eight} {nine} {ten}")
+                file.write(f"{svalue} {zero} {one} {two} {three} {four} {five} {six} {seven} {eight} {nine} {ten} {eleven} {twelve} {thirteen} {fourteen} {fifteen} {sixteen} {seventeen} {eighteen} {nineteen} {twenty} {twentyone} {twentytwo}\n")
 
 if __name__ == '__main__':
     prefix = sys.argv[1]
