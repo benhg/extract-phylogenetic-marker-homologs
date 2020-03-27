@@ -3,7 +3,7 @@ from os import sys
 import sys
 
 def extract_output(prefix):
-    directory = f'/home/users/glick/extract-phylogenetic-marker-homologs/{prefix}_out'
+    directory = f'/home/users/glick/extract-phylogenetic-marker-homologs/{prefix}_star_out'
     os.chdir(directory)
     os.system("echo 'name 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22' >> output2.txt")
     for filename in os.listdir(directory):
