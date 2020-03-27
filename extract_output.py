@@ -55,7 +55,7 @@ def extract_output(prefix):
                 elif i == 20: twenty = total
                 elif i == 21: twentyone = total
                 elif i == 22: twentytwo = total
-                os.chdir(directory)
+            os.chdir(directory)
 
 
             print("writing to file ")
