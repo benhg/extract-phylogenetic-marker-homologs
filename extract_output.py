@@ -7,7 +7,7 @@ zero = one = two = three = four = five = six = seven = eight = nine = ten = 0
 def extract_output(prefix):
     directory = f'/home/users/glick/extract-phylogenetic-marker-homologs/{prefix}_star_out/'
     os.chdir(directory)
-    os.system("echo 'name 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22' >> output.txt")
+    os.system("echo 'name 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22' > output.txt")
     for filename in [i for i in os.listdir(directory) if os.path.isdir(i)]:
         print(filename)
         if os.path.isdir(directory + filename):
