@@ -32,7 +32,7 @@ def extract_output(prefix):
                 else: 
                     multi = 0
                 total = uniquely + multi
-                if i == 0: zero = total
+                if i == 0: global zero; zero = total
                 elif i == 1: one = total
                 elif i == 2: two = total
                 elif i == 3: three = total
